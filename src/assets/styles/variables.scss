@@ -1,0 +1,44 @@
+// Color scheme
+$primary-color: #5c9894;
+$secondary-color: #8cc9c4;
+$tertiary-color: #e2e8e4;
+
+$grayscale: #ffffff, #f2f5f3, #9f9f9f, #000000;
+
+$success-color: #03bb1b;
+$warning-color: #ff8c00;
+$error-color: #d30000;
+
+// Derived colors
+$bg-color: list.nth($grayscale, 1);
+$fg-color: list.nth($grayscale, -1);
+$text-main-color: $fg-color;
+$link-color: $primary-color;
+$header-color: $tertiary-color;
+$footer-color: $bg-color;
+
+$highlight-color: list.nth($grayscale, 2);
+$border-color: list.nth($grayscale, -2);
+$shadow-color: rgba($fg-color, 0.25);
+
+$box-bg-color: list.nth($grayscale, 1);
+$box-border-color: $secondary-color;
+$box-header-color: $text-main-color;
+$dialog-bg-color: rgba(list.nth($grayscale, 2), 0.7);
+
+$btn-color: $tertiary-color;
+$btn-pressed-color: $secondary-color;
+
+$tooltip-background-color: rgba($fg-color, 0.6);
+$tooltip-text-color: list.nth($grayscale, 1);
+
+// Borders
+$btn-border-radius: 6px;
+$box-border-radius: 8px;
+$box-border-thickness: 4px;
+
+// Breakpoints for responsive Design
+$break-max-smartphone: 540px;
+$break-max-tablet-pt: 720px;
+$break-max-tablet-ls: 1280px;
+$absolute-min-width: 200px;

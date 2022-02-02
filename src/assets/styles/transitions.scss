@@ -1,0 +1,23 @@
+// Dialog transition
+.dialog-enter-active, .dialog-leave-active {
+  transition: opacity .5s ease, backdrop-filter .5s ease;
+  perspective: 800px;
+  perspective-origin: bottom center;
+
+  #dlgBox {
+    transition: transform .2s ease;
+  }
+}
+
+.dialog-leave-active {
+  transition: opacity .3s ease;
+}
+
+.dialog-enter-from, .dialog-leave-to {
+  opacity: 0;
+  backdrop-filter: blur(5px) opacity(0);
+}
+
+.dialog-enter-from #dlgBox {
+  transform: rotateX(3deg);
+}
