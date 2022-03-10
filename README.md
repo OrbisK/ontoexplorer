@@ -33,6 +33,12 @@ npm run build
 npm run lint
 ```
 
+## Instant installation using builds from GitLab CI
+
+Das GitLab-Repository bietet aktuell generierte Builds über CI/CD. Hier ist eine laufähige Installation für ein Webroot-Verzeichnis verfügbar. 
+
+https://gitlab.imn.htwk-leipzig.de/ontoexplorer/ontoexplorer/-/jobs/104939/artifacts/download?file_type=archive
+
 ## Konfiguration von fest definierten Endpunkten
 
 Die fest definierten Endpunkte werden in [default-config.json](public/default-config.json) mit den folgenden Angaben für den jeweiligen Endpunkt konfiguriert:
