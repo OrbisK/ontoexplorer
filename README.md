@@ -10,6 +10,10 @@ Der OntoExplorer bietet einen Einblick in SPARQL-Endpunkte des Semantic Web und 
 
 (Weitere Hinweise zur Benutzung sind im Ontoexplorer auf der Hilfeseite hinter dem Fragezeichen zu finden.)
 
+## OntoExplorer verwenden / ausprobieren
+
+https://ontoexplorer.pcp-on-web.de/
+
 ## Installation
 
 Der Ontoexplorer kann entweder auf einen Webserver deployed oder lokal genutzt werden. Für die lokale Nutzung ist es nötig, dass Node installiert ist (bei der Entwicklung kamen vor allem Node 14 und 16 zum Einsatz) und npm darin enthalten ist.
