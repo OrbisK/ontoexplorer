@@ -48,7 +48,7 @@ test('parse invalid json', () => {
   } catch (error) {
     thrownError = error;
   }
-  expect(thrownError).toHaveProperty("cause", ParsingErrorCause.INVALID_JSON);
+  expect(thrownError).toHaveProperty("errorCause", ParsingErrorCause.INVALID_JSON);
 });
 
 test('parse root not array', () => {
@@ -58,7 +58,7 @@ test('parse root not array', () => {
   } catch (error) {
     thrownError = error;
   }
-  expect(thrownError).toHaveProperty("cause", ParsingErrorCause.INVALID_STRUCTURE);
+  expect(thrownError).toHaveProperty("errorCause", ParsingErrorCause.INVALID_STRUCTURE);
 });
 
 test('parse config with missing url', () => {
@@ -68,7 +68,7 @@ test('parse config with missing url', () => {
   } catch (error) {
     thrownError = error;
   }
-  expect(thrownError).toHaveProperty("cause", ParsingErrorCause.MISSING_DATA);
+  expect(thrownError).toHaveProperty("errorCause", ParsingErrorCause.MISSING_DATA);
 });
 
 test('parse config with wrong type for url', () => {
@@ -78,5 +78,5 @@ test('parse config with wrong type for url', () => {
   } catch (error) {
     thrownError = error;
   }
-  expect(thrownError).toHaveProperty("cause", ParsingErrorCause.INVALID_STRUCTURE);
+  expect(thrownError).toHaveProperty("errorCause", ParsingErrorCause.INVALID_STRUCTURE);
 });
