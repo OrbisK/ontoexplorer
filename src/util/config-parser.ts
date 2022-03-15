@@ -8,11 +8,11 @@ export enum ParsingErrorCause {
 
 export class ParsingError extends Error {
 
-  readonly cause: ParsingErrorCause;
+  readonly errorCause: ParsingErrorCause;
 
   constructor(cause: ParsingErrorCause, message = "") {
     super();
-    this.cause = cause;
+    this.errorCause = cause;
     this.message = message || ParsingErrorCause[cause];
   }
 
