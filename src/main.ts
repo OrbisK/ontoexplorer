@@ -7,7 +7,7 @@ import stateProvider from '@/providers/OntoExplorerStateProvider'
 import VueToast from 'vue-toast-notification';
 import {loadPrefixes} from "@/util/prefix-cc";
 
-sparql.loadOrDefault("/default-config.json");
+sparql.loadOrDefault("default-config.json");
 
 const app = createApp(App);
 app.provide('sparql', sparql);
