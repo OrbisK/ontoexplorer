@@ -68,7 +68,7 @@
       </div>
       <div class="mainmenubox">
         <Tooltip :text="`Projekt-Webseite`">
-          <a href="https://gitlab.imn.htwk-leipzig.de/ontoexplorer/ontoexplorer">
+          <a href="https://github.com/pcp-on-web/ontoexplorer/">
             <button id="infoBtn"><span class="material-icons" style="font-size:26px;">public</span></button>
           </a>
         </Tooltip>
