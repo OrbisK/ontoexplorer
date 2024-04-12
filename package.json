@@ -18,6 +18,7 @@
     "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/twemoji": "^1.1.15",
     "@nuxt/eslint": "^0.3.6",
+    "@nuxt/image": "^1.5.0",
     "@nuxt/ui": "^2.15.2",
     "@nuxtjs/color-mode": "^3.4.0",
     "@pinia/nuxt": "^0.5.1",
@@ -28,6 +29,7 @@
     "eslint-plugin-format": "^0.1.0",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
+    "sparql-http-client": "^3.0.0",
     "typescript": "^5.4.5",
     "vue-tsc": "^2.0.12"
   }

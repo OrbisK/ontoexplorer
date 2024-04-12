@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
-    "@nuxt/ui"
+    '@nuxt/ui',
+    "@nuxt/image"
   ],
 
   experimental: {
@@ -21,6 +22,7 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: '',
+    preference: 'light',
   },
 
   nitro: {
