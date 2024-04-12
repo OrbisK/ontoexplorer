@@ -1,23 +1,23 @@
 <script setup lang="ts">
-const online = useOnline()
+import type { BreadcrumbLink } from '#ui/types'
+
+const links = ref<BreadcrumbLink[]>([{
+  label: 'Home',
+  icon: 'i-heroicons-home',
+  to: '/'
+}, {
+  label: 'Navigation',
+  icon: 'i-heroicons-square-3-stack-3d'
+}, {
+  label: 'Breadcrumb',
+  icon: 'i-heroicons-link'
+}])
 </script>
 
 <template>
-  <div>
-    <Logos mb-6 />
-    <Suspense>
-      <ClientOnly>
-        <PageView v-if="online" />
-        <div v-else text-gray:80>
-          You're offline
-        </div>
-      </ClientOnly>
-      <template #fallback>
-        <div italic op50>
-          <span animate-pulse>Loading...</span>
-        </div>
-      </template>
-    </Suspense>
-    <InputEntry />
-  </div>
+  <UBreadcrumb :links="links">
+    <template #icon="{ link }">
+      <UIcon :name="link.icon" />
+    </template>
+  </UBreadcrumb>
 </template>
