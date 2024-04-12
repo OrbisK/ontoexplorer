@@ -46,12 +46,13 @@ jobs:
     #      - lint
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '20'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          node-version: 20
+          cache: pnpm
+      - name: Install
+        run: pnpm install
       - name: Build project
         run: pnpm run generate
       - name: Deploy to GitHub Pages
