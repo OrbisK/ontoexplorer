@@ -1,14 +1,15 @@
-import {Ref, ref, readonly} from "@vue/reactivity";
-import {SparqlClass} from "@/model/SparqlClass"
+import type { Ref } from '@vue/reactivity'
+import { readonly, ref } from '@vue/reactivity'
+import type { SparqlClass } from '@/model/SparqlClass'
 
-const classIndex: Map<string, SparqlClass> = new Map();
-const current = ref<SparqlClass | null>(null);
+const classIndex: Map<string, SparqlClass> = new Map()
+const current = ref<SparqlClass | null>(null)
 
 /**
  * Removes all classes from index, for example in case of a full reload
  */
 function clearIndex() {
-  classIndex.clear();
+  classIndex.clear()
 }
 
 /**
@@ -18,13 +19,14 @@ function clearIndex() {
  * @returns Updated canonical class for the IRI of the old class
  */
 function getCanonical(cls: SparqlClass): SparqlClass {
-  const canonicalClass = classIndex.get(cls.iri);
+  const canonicalClass = classIndex.get(cls.iri)
   if (canonicalClass) {
-    canonicalClass.merge(cls);
-    return canonicalClass;
-  } else {
-    classIndex.set(cls.iri, cls);
-    return cls;
+    canonicalClass.merge(cls)
+    return canonicalClass
+  }
+  else {
+    classIndex.set(cls.iri, cls)
+    return cls
   }
 }
 
@@ -33,18 +35,17 @@ function getCanonical(cls: SparqlClass): SparqlClass {
  * @param classIri Selected class or null value to reset selection
  */
 function setCurrent(classIri: string | null) {
-  current.value = classIri ? classIndex.get(classIri) || null : null;
+  current.value = classIri ? classIndex.get(classIri) || null : null
 }
 
-
-export default {current: readonly(current), setCurrent, getCanonical, clearIndex};
+export default { current: readonly(current), setCurrent, getCanonical, clearIndex }
 
 export interface ClassInfoIF {
-  readonly current: Ref<SparqlClass | null>;
+  readonly current: Ref<SparqlClass | null>
 
-  setCurrent(classIri: string | null): void;
+  setCurrent: (classIri: string | null) => void
 
-  getCanonical(cls: SparqlClass): SparqlClass;
+  getCanonical: (cls: SparqlClass) => SparqlClass
 
-  clearIndex(): void;
+  clearIndex: () => void
 }

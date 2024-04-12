@@ -1,5 +1,7 @@
 import { isProxy, toRaw } from 'vue'
+// @ts-expect-error
 import { ParsingClient } from 'sparql-http-client'
+// @ts-expect-error
 import type { ResultRow } from 'sparql-http-client'
 import classInfo from '../providers/ClassInfoProvider'
 import SparqlQueries from '@/model/SparqlQueries'
