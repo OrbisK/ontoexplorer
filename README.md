@@ -1,111 +1,80 @@
-# OntoExplorer
+<p align="center">
+<img src="https://user-images.githubusercontent.com/11247099/140462375-7b7ac4db-35b7-453c-8a05-13d8d20282c4.png" width="600"/>
+</p>
 
-## About
+<h2 align="center">
+<a href="https://github.com/antfu/vitesse">Vitesse</a> for Nuxt 3
+</h2><br>
 
-Der OntoExplorer bietet einen Einblick in SPARQL-Endpunkte des Semantic Web und ermöglicht das Explorieren durch, das Recherchieren nach und das Filtern von RDF-Datensätzen in diesen Endpunkten. Dafür können die Endpunkte manuell verwaltet werden, die Ergebnisliste mit Attributen angereichert werden und die Seitenansicht, sowie die Konfiguration der Endpunkte mit anderen Nutzern geteilt werden.
+<p align="center">
+<br>
+<a href="https://vitesse-nuxt3.netlify.app/">🖥 Online Preview</a>
+<br><br>
+<a href="https://stackblitz.com/github/antfu/vitesse-nuxt3"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
+</p>
 
+## Features
 
-<img src="Screenshot.png"/>
+- 💚 [Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, etc.
 
+- ⚡️ Vite - Instant HMR.
 
-(Weitere Hinweise zur Benutzung sind im Ontoexplorer auf der Hilfeseite hinter dem Fragezeichen zu finden.)
+- 🎨 [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
 
-## OntoExplorer verwenden / ausprobieren
+- 😃 Use icons from any icon sets in Pure CSS, powered by [UnoCSS](https://github.com/unocss/unocss).
 
-https://ontoexplorer.pcp-on-web.de/
+- 🔥 The `<script setup>` syntax.
 
-## Installation
+- 🍍 [State Management via Pinia](https://github.com/vuejs/pinia), see [./composables/user.ts](./composables/user.ts).
 
-Der Ontoexplorer kann entweder auf einen Webserver deployed oder lokal genutzt werden. Für die lokale Nutzung ist es nötig, dass Node installiert ist (bei der Entwicklung kamen vor allem Node 14 und 16 zum Einsatz) und npm darin enthalten ist.
+- 📑 [Layout system](./layouts).
 
-Außerdem sind folgende Schritte zur Installation notwendig:
+- 📥 APIs auto importing - for Composition API, VueUse and custom composables.
 
-### Project-Setup:
+- 🏎 Zero-config cloud functions and deploy.
+
+- 🦾 TypeScript, of course.
+
+- 📲 [PWA](https://github.com/vite-pwa/nuxt) with offline support and auto-update behavior.
+
+## Plugins
+
+### Nuxt Modules
+
+- [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
+- [ColorMode](https://github.com/nuxt-modules/color-mode) - dark and Light mode with auto detection made easy with Nuxt.
+- [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic CSS engine.
+- [Pinia](https://github.com/vuejs/pinia) - intuitive, type safe, light and flexible Store for Vue.
+- [VitePWA](https://github.com/vite-pwa/nuxt) - zero-config PWA Plugin for Nuxt 3.
+- [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience.
+
+## IDE
+
+We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (You might want to disable [Vetur](https://vuejs.github.io/vetur/) if you have it).
+
+## Variations
+
+- [vitesse](https://github.com/antfu/vitesse) - Opinionated Vite Starter Template
+- [vitesse-lite](https://github.com/antfu/vitesse-lite) - Lightweight version of Vitesse
+- [vitesse-nuxt-bridge](https://github.com/antfu/vitesse-nuxt-bridge) - Vitesse for Nuxt 2 with Bridge
+- [vitesse-webext](https://github.com/antfu/vitesse-webext) - WebExtension Vite starter template
+
+## Try it now!
+
+### Online
+
+<a href="https://stackblitz.com/github/antfu/vitesse-nuxt3"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
+
+### GitHub Template
+
+[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-nuxt3/generate).
+
+### Clone to local
+
+If you prefer to do it manually with the cleaner git history
+
+```bash
+npx degit antfu/vitesse-nuxt3 my-nuxt3-app
+cd my-nuxt3-app
+pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
-npm ci 
-```
-### Compiles and hot-reloads for development:
-```
-npm run serve
-```
-### Compiles and minifies for production:
-```
-npm run build
-```
-### Lints and fixes files
-```
-npm run lint
-```
-
-## Instant installation using builds from GitLab CI
-
-Das GitLab-Repository bietet aktuell generierte Builds über CI/CD. Hier ist eine laufähige Installation für ein Webroot-Verzeichnis verfügbar. 
-
-https://gitlab.imn.htwk-leipzig.de/ontoexplorer/ontoexplorer/-/jobs/104939/artifacts/download?file_type=archive
-
-## Konfiguration von fest definierten Endpunkten
-
-Die fest definierten Endpunkte werden in [default-config.json](public/default-config.json) mit den folgenden Angaben für den jeweiligen Endpunkt konfiguriert:
-
-```json
-[
-  {
-    "name": "Endpoint display name",
-    "url": "https://endpoint.url/sparql",
-    
-    "usesOWL": false,
-    "authorization": {
-      "user": "user",
-      "password": "password"
-    },
-    "headers": {
-      "CUSTOM_HEADER": "value"
-    }
-  },
-]
-```
-
-Dabei sind die Parameter `name` und `url` unbedingt nötig, alle weiteren sind optional. Der Parameter `usesOWL` gibt dabei an, ob der SPARQL-Server OWL benutzt, der Default-Wert ist `false`. Für SPARQL-Endpunkte, bei denen eine Authentifikation nötig ist, kann diese unter `authorization` mit `user` und `password` angegeben werden. Außerdem können unter `headers` weitere Header für Abfragen an den Endpunkt angegeben werden.
-
-## Dokumentation
-### Coding
-* TypeScript, welches in Vue-Komponenten verwendet wird, sollte sich nicht in den .vue-Dateien direkt befinden, sondern in gleichnamige .ts-Dateien ausgelagert werden.
-* Klassen müssen für die Dokumentationsgenerierung in src/tsdoc-index.ts indiziert werden
-* Für Einrückungen sollen Leerzeichen verwendet werden. 1 Einrückung entspricht dabei 2 Leerzeichen
-* [Vue-Coding Style ](https://v3.vuejs.org/style-guide/)
-
-### Code-Dokumentation
-Richtlinien:
-* Es sollen Klassen und Funktionen in TypeScript-Dateien dokumentiert werden. 
-* Inline-Kommentare sind möglichst du vermeiden. Die Dokumentation soll nach Möglichkeit in Englisch erfolgen.
-* [Documentation Style](https://vue-styleguidist.github.io/docs/Documenting.html)
-
-Installieren von typedoc global:
-```
-npm install -g typedoc
-```
-Generieren eine Dokumentation in /docs:
-```
-typedoc src/tsdoc-index.ts 
-```
-
-
-### Tests
-* Für Tests wird [Jest](https://jestjs.io/) verwendet. 
-* Tests sollen unter tests/unit liegen und *.spec.ts benannt werden.
-* Ziel: Testabdeckung soll bei 50% liegen
-
-Ausführen der Tests und Berechnung der Testabdeckung:
-```
-npm run test:unit
-```
-
-### Anpassen der Konfiguration
-Siehe [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-## Styleguide
-Der in diesem Projekt verwendete Styleguide ist [hier](OE_Styleguide.pdf) zu finden.
-
-## Verwendete Lizenz
-Der OntoExplorer ist lizensiert unter der [MIT-Lizenz](LICENSE).

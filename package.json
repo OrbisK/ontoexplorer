@@ -1,77 +1,33 @@
 {
-  "name": "ontoexplorer",
-  "version": "0.1.0",
+  "type": "module",
   "private": true,
-  "license": "MIT",
+  "packageManager": "pnpm@8.15.6",
   "scripts": {
-    "preserve": "node version-script.js",
-    "serve": "vue-cli-service serve",
-    "prebuild": "node version-script.js",
-    "build": "vue-cli-service build",
-    "pretest:unit": "node version-script.js",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "jsonschema": "^1.4.0",
-    "vue": "^3.0.0",
-    "vue-class-component": "^8.0.0-0"
+    "build": "nuxi build",
+    "dev:pwa": "VITE_PLUGIN_PWA=true nuxi dev",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "prepare": "nuxi prepare",
+    "start": "node .output/server/index.mjs",
+    "start:generate": "npx serve .output/public",
+    "lint": "eslint .",
+    "typecheck": "vue-tsc --noEmit"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.19",
-    "@types/sparql-http-client": "^2.2.6",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "^4.5.13",
-    "@vue/cli-plugin-unit-jest": "^4.5.13",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-rc.9",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "html-webpack-inline-source-plugin": "0.0.10",
-    "html-webpack-plugin": "^4.5.0",
-    "sass": "^1.43.4",
-    "sass-loader": "^10.0.0",
-    "sparql-http-client": "^2.2.6",
-    "typescript": "~4.1.5",
-    "vue-jest": "^5.0.0-0",
-    "vue-toast-notification": "^2.0.1"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript"
-    ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
-    },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@antfu/eslint-config": "^2.13.3",
+    "@iconify-json/carbon": "^1.1.31",
+    "@iconify-json/twemoji": "^1.1.15",
+    "@nuxt/eslint": "^0.3.6",
+    "@nuxtjs/color-mode": "^3.4.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@vite-pwa/nuxt": "^0.6.0",
+    "@vueuse/nuxt": "^10.9.0",
+    "consola": "^3.2.3",
+    "eslint": "^9.0.0",
+    "eslint-plugin-format": "^0.1.0",
+    "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
+    "typescript": "^5.4.5",
+    "vue-tsc": "^2.0.12"
+  }
 }
