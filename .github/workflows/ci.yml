@@ -54,7 +54,7 @@ jobs:
       - name: Install
         run: pnpm install
       - name: Build project
-        run: pnpm run build --preset github_pages
+        run: NUXT_APP_BASE_URL=/ontoexplorer/ pnpm run build --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

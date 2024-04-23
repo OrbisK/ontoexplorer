@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/ui',
-    "@nuxt/image"
+    '@nuxt/image',
   ],
 
   experimental: {
