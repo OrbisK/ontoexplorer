@@ -17,7 +17,7 @@ const links = [
       </nuxt-link>
       <UHorizontalNavigation :links="links" />
     </header>
-    <main class="px-10 py-20 text-center">
+    <main class="p-4 h-[--body-height]">
       <slot />
     </main>
   </div>
@@ -26,5 +26,6 @@ const links = [
 <style>
 html {
   --header-height: 4rem;
+  --body-height: calc(100vh - var(--header-height));
 }
 </style>
