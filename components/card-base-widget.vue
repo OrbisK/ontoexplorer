@@ -7,20 +7,12 @@ defineProps({
 })
 
 const uiOverrides = {
-  body: {
-    base: '',
-    background: '',
-    padding: '',
-  },
+  paddingMedium: `0`,
 }
 </script>
 
 <template>
-  <UCard :ui="uiOverrides" class="h-full">
-    <template #header>
-      {{ title }}
-    </template>
-
+  <NCard class="h-full" :title="title" :theme-overrides="uiOverrides" header-class="!p-2">
     <slot />
-  </Ucard>
+  </NCard>
 </template>

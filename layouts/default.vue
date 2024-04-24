@@ -1,26 +1,19 @@
 <script setup lang="ts">
-const links = [
-  [],
-  [{
-    label: 'Github',
-  }, {
-    label: 'Docs',
-  }],
-]
 </script>
 
 <template>
-  <div>
-    <header class="p-1 border-b border-gray-200 dark:border-gray-800 flex flex-row h-[--header-height]">
+  <NLayout>
+    <NLayoutHeader bordered class="h-[--header-height]">
       <nuxt-link to="/" class="h-full">
         <nuxt-img src="logo.svg" class="h-full" />
       </nuxt-link>
-      <UHorizontalNavigation :links="links" />
-    </header>
-    <main class="p-4 h-[--body-height]">
-      <slot />
-    </main>
-  </div>
+    </NLayoutHeader>
+    <n-scrollbar class="max-h-[--body-height] h-full">
+      <main class="p-4 h-[--body-height] min-h-128 box-border">
+        <slot />
+      </main>
+    </n-scrollbar>
+  </NLayout>
 </template>
 
 <style>

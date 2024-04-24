@@ -8,9 +8,13 @@ useHead({
 
 <template>
   <VitePwaManifest />
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <naive-config>
+    <NMessageProvider>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </NMessageProvider>
+  </naive-config>
 </template>
 
 <style>

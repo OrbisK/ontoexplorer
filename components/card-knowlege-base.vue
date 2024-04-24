@@ -1,45 +1,37 @@
 <script setup lang="ts">
+import { ButtonAction } from '#components'
+
 const columns = [{
+  type: 'selection',
+}, {
   key: 'name',
-  label: 'Name',
+  title: 'Name',
+  ellipsis: {
+    tooltip: true,
+  },
 }, {
   key: 'actions',
+  width: 50,
+  render: () => {
+    return h(ButtonAction, { size: 'tiny' })
+  },
 }]
 
-function actions(row) {
-  return [
-    [{
-      label: 'Edit',
-      icon: 'i-heroicons-pencil-square-20-solid',
-      click: () => console.log('Edit', row.id),
-    }, {
-      label: 'Duplicate',
-      icon: 'i-heroicons-document-duplicate-20-solid',
-    }],
-    [{
-      label: 'Delete',
-      icon: 'i-heroicons-trash-20-solid',
-    }],
-  ]
-}
-
 const selected = ref([])
-const data = ref([{ name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data' }])
+const data = ref([
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data2' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data3' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data4' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data5' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data6' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data7' },
+  { name: 'Meine Test DataMeine Test DataMeine Test DataMeine Test Data8' },
+])
 </script>
 
 <template>
   <CardBaseWidget title="Wissensbasis">
-    <UTable
-      v-model="selected"
-      :rows="data" :columns :ui="{ td: { base: '' } }"
-    >
-      <template #actions-data="{ row }">
-        <div class="w-6">
-          <UDropdown :items="actions(row)">
-            <UButton color="gray" variant="ghost" icon="i-heroicons-ellipsis-horizontal-20-solid" />
-          </UDropdown>
-        </div>
-      </template>
-    </UTable>
+    <NDataTable v-model:checked-row-keys="selected" size="small" :columns="columns" :bordered="false" :flex-height="true" class="h-full" :data="data" :row-key="(row) => row.name" />
   </CardBaseWidget>
 </template>
